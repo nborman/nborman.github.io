@@ -11,8 +11,20 @@ for(var i=0; i<addToCartButtons.length; i++) {
 	});
 }
 
+// лайкнутые товары
 
- $('div.like').click(function() {
-    $(this).toggleClass('changeColorLike');
-  });
+var likeButtons = document.querySelectorAll('.like');
+console.log (likeButtons);
+for(var i=0; i<likeButtons.length;i++) {
+	likeButtons[i].addEventListener('click', function(){
+		if(this.classList.contains('liked')) {
+			this.classList.remove('liked')
+		} else {
+			this.classList.add('liked')
+		}
+	})
+}
 
+// add slick
+
+$('.slider-block').slick();
